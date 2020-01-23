@@ -2,7 +2,9 @@ import React from 'react';
 
 const Header = () => {
   return (
-    <div>WeatherData (Header)</div>
+    <div className="header">
+      <p className="header__title">WeatherData</p>
+    </div>
   )
 }
 

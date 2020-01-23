@@ -1,0 +1,13 @@
+.header {
+  background: $light-blue;
+  color: Black;
+  margin-bottom: $m-size;
+  padding: $m-size 0;
+}
+
+.header__title {
+  font-size: $l-size;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+}
