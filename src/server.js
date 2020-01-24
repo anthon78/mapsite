@@ -3,14 +3,41 @@ let app = express();
 const bodyparser = require("body-parser");
 const cors = require("cors");
 const RandomOrg = require('random-org');
+const OpenWeatherMapHelper = require("openweathermap-node");
 
 //middlewear
 app.use(bodyparser());
 app.use(cors());
 app.use(express.static(__dirname + './../public'));
 
+const helper = new OpenWeatherMapHelper(
+  {
+    APPID: 'fc6667ed49fd23a044c4bdfce98ee460',
+    units: "imperial"
+  }
+);
+
 
 //routes
+app.post('/api/weatherData', async (req, res) => {
+  let coordinates = req.body.coordinates;
+  let weatherDataList = [];
+  for (let coord of coordinates) {
+    let lat = coord[0];
+    let long = coord[1];
+    helper.getCurrentWeatherByGeoCoordinates(lat, long, (err, currentWeather) => {
+      if (err) {
+        console.log(err);
+      } else {
+        weatherDataList.push(currentWeather);
+        if (weatherDataList.length === coordinates.length) {
+          res.send(weatherDataList);
+        }
+      }
+    })
+  }
+})
+
 app.post('/api/latLongPoints', (req, res) => {
   let total = req.body.total;
   let random = new RandomOrg({ apiKey: 'c40ba9e1-c548-43cf-b1d3-9f60187d0c0e' });

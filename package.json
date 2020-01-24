@@ -25,6 +25,7 @@
     "node-sass": "^4.13.1",
     "nodemon": "^2.0.2",
     "normalize.css": "^8.0.1",
+    "openweathermap-node": "^1.1.2",
     "random-org": "^2.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",

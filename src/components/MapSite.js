@@ -2,7 +2,6 @@ import React from 'react';
 import Header from './Header';
 import WeatherMap from './WeatherMap';
 import SearchBar from './Searchbar';
-import RandomOrg from 'random-org';
 import axios from 'axios';
 
 class MapSite extends React.Component {
