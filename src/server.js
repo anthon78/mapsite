@@ -20,7 +20,7 @@ const helper = new OpenWeatherMapHelper(
 
 //routes
 app.post('/api/weatherData', async (req, res) => {
-  let coordinates = req.body.coordinates;
+  let coordinates = req.body.coordinates.data;
   let weatherDataList = [];
   for (let coord of coordinates) {
     let lat = coord[0];
@@ -31,6 +31,7 @@ app.post('/api/weatherData', async (req, res) => {
       } else {
         weatherDataList.push(currentWeather);
         if (weatherDataList.length === coordinates.length) {
+          console.log(weatherDataList);
           res.send(weatherDataList);
         }
       }
