@@ -1,0 +1,19 @@
+.add-points {
+  display: flex;
+  flex-direction: row;
+}
+
+.add-points-error {
+  font-style: italic;
+  margin: $m-size 0 0 0;
+  padding: $m-size;
+  background: $error-red;
+}
+
+.add-points__input {
+  background: $light-blue;
+  margin: 0 0 $s-size 0;
+  margin-right: $s-size;
+  padding: $s-size;
+  font-weight: bold;
+}

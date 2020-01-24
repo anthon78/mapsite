@@ -5,12 +5,21 @@ import SearchBar from './Searchbar';
 
 class MapSite extends React.Component {
 
+  handleAddPoints = (points) => {
+    if (!points) {
+      return 'Enter valid numerical value';
+    }
+    return;
+  }
+
   render() {
     return (
       <div>
         <Header />
         <WeatherMap />
-        <SearchBar />
+        <SearchBar
+          handleAddPoints={this.handleAddPoints}
+        />
       </div>
     )
   }
