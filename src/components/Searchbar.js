@@ -9,6 +9,7 @@ class SearchBar extends React.Component {
     e.preventDefault();
 
     const points = e.target.elements.points.value.trim();
+
     const error = this.props.handleAddPoints(points);
 
     this.setState(() => ({ error }));
