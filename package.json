@@ -29,6 +29,7 @@
     "random-org": "^2.0.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-map-gl": "^5.2.1",
     "react-modal": "^3.11.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",

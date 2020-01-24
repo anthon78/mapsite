@@ -31,7 +31,6 @@ app.post('/api/weatherData', async (req, res) => {
       } else {
         weatherDataList.push(currentWeather);
         if (weatherDataList.length === coordinates.length) {
-          console.log(weatherDataList);
           res.send(weatherDataList);
         }
       }

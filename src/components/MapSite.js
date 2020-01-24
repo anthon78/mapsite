@@ -14,13 +14,10 @@ class MapSite extends React.Component {
     if (!points) {
       return 'Enter valid numerical value';
     }
-    // this.getRandomLatLongPoints(points)
-    //   .then(coordinates => {
-    //     this.getWeatherData(coordinates);
-    //   })
-
-    const coordinates = await this.getRandomLatLongPoints(points);
-    await this.getWeatherData(coordinates);
+    this.getRandomLatLongPoints(points)
+      .then(coordinates => {
+        this.getWeatherData(coordinates);
+      })
   };
 
   getWeatherData = (coordinates) => {
@@ -46,9 +43,11 @@ class MapSite extends React.Component {
     return (
       <div>
         <Header />
-        <WeatherMap />
         <SearchBar
           handleAddPoints={this.handleAddPoints}
+        />
+        <WeatherMap
+          weatherDataList={this.state.weatherDataList}
         />
       </div>
     )
