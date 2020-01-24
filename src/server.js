@@ -3,7 +3,7 @@ let app = express();
 const bodyparser = require("body-parser");
 const cors = require("cors");
 const RandomOrg = require('random-org');
-const OpenWeatherMapHelper = require("openweathermap-node");
+const OpenWeatherMapHelper = require("openweathermap-node-with-units-preference");
 
 //middlewear
 app.use(bodyparser());
