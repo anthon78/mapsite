@@ -25,7 +25,6 @@ class WeatherMap extends React.Component {
   }
 
   render() {
-    console.log(this.props.weatherDataList);
     return (
       <div>
         <ReactMapGL

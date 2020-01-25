@@ -11,18 +11,17 @@ class MapSite extends React.Component {
   }
 
   handleAddPoints = (points) => {
-    console.log(Number.isInteger(points));
-    console.log(String)
+    points = Number(points);
     if (!points) {
       return 'Enter valid numerical value';
-    } else if (!Number.isInteger(+points)) {
+    } else if (!Number.isInteger(points)) {
       return 'Enter an integer';
+    } else if (points <= 0) {
+      return 'Enter an integer grater than 0';
     }
     else if (points >= 500) {
       return 'Enter a number less than 500'
     }
-
-    points = Number(points);
     this.getRandomLatLongPoints(points)
       .then(coordinates => {
         this.getWeatherData(coordinates);
