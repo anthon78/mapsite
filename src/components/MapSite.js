@@ -10,6 +10,7 @@ class MapSite extends React.Component {
     weatherDataList: []
   }
 
+  //validate input before retrieving lat/long points
   handleAddPoints = (points) => {
     points = Number(points);
     if (!points) {
@@ -28,6 +29,7 @@ class MapSite extends React.Component {
       })
   };
 
+  //retrieve weather info on lat/long points and update state
   getWeatherData = (coordinates) => {
     return axios.post('/api/weatherData', {
       coordinates: coordinates
@@ -37,6 +39,7 @@ class MapSite extends React.Component {
       })
   }
 
+  //get "total" number of random lat/long points
   getRandomLatLongPoints = (total) => {
     return axios.post('/api/latLongPoints', {
       total: total,
