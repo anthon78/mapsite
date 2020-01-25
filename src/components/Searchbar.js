@@ -23,18 +23,20 @@ class SearchBar extends React.Component {
     return (
       <div>
         {this.state.error && <p className="add-points-error">{this.state.error}</p>}
-        <form
-          className="add-points"
-          onSubmit={this.handleAddPoints}
-        >
-          <input
-            type="text"
-            name="points"
-            className="add-points__input"
-            placeholder="enter number"
-          />
-          <button className="button">Search</button>
-        </form>
+        <div className="search-bar">
+          <form
+            className="add-points"
+            onSubmit={this.handleAddPoints}
+          >
+            <input
+              type="text"
+              name="points"
+              className="add-points__input"
+              placeholder="enter number"
+            />
+            <button className="button">Search</button>
+          </form>
+        </div>
       </div>
     )
   }

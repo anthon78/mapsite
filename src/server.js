@@ -45,10 +45,10 @@ app.post('/api/latLongPoints', (req, res) => {
   let longitudes;
   let latLongs;
 
-  random.generateIntegers({ min: -90, max: 90, n: total })
+  random.generateIntegers({ min: -85, max: 85, n: total })
     .then((result) => {
       latitudes = result.random.data;
-      random.generateIntegers({ min: -180, max: 180, n: total })
+      random.generateIntegers({ min: -170, max: 170, n: total })
         .then((result) => {
           longitudes = result.random.data;
           latLongs = mergeTwoEqualLists(latitudes, longitudes);
